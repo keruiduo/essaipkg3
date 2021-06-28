@@ -7,6 +7,9 @@
 #    http://shiny.rstudio.com/
 #
 
+data(i18n, package = "essaipkg3")
+
+
 showtext_auto()
 
 ########################################################
