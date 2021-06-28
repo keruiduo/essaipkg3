@@ -8,31 +8,31 @@
 #
 
 
-#i18n <- Translator$new(translation_json_path = "translation.json")
-#i18n$set_translation_language("en")
+#essaipkg3::i18n <- Translator$new(translation_json_path = "translation.json")
+#essaipkg3::i18n$set_translation_language("en")
 
 # Define UI for application that draws a histogram
 shinyAppUI <- fluidPage(
-  shiny.i18n::usei18n(essaipkg3::i18n),
+  shiny.essaipkg3::i18n::useessaipkg3::i18n(essaipkg3::essaipkg3::i18n),
   div( style = "float: right;",
        selectInput('selected_language',
-                   essaipkg3::i18n$t("Change language"),
-                   choices = essaipkg3::i18n$get_languages(),
-                   selected = essaipkg3::i18n$get_key_translation())
+                   essaipkg3::essaipkg3::i18n$t("Change language"),
+                   choices = essaipkg3::essaipkg3::i18n$get_languages(),
+                   selected = essaipkg3::essaipkg3::i18n$get_key_translation())
   ),
 
-  titlePanel(essaipkg3::i18n$t("*** Lotka Volterra Predator-Prey relations ***")),
+  titlePanel(essaipkg3::essaipkg3::i18n$t("*** Lotka Volterra Predator-Prey relations ***")),
 
   sidebarLayout(
     sidebarPanel(
       tabPanel(title="Lotka Volterra Predator-Prey",
-               helpText(h3(essaipkg3::i18n$t("Set parameters for the L-V predator-prey model"))),
+               helpText(h3(essaipkg3::essaipkg3::i18n$t("Set parameters for the L-V predator-prey model"))),
 
-               helpText(h4(essaipkg3::i18n$t("Set starting population sizes"))),
-               numericInput("N",label=p(essaipkg3::i18n$t("Select a value for N (starting population of prey)")),value=25,min=1,max=50),
-               numericInput("P",label=p(essaipkg3::i18n$t("Select a value for P (starting population of predator)")),value=10,min=1,max=25),
+               helpText(h4(essaipkg3::essaipkg3::i18n$t("Set starting population sizes"))),
+               numericInput("N",label=p(essaipkg3::essaipkg3::i18n$t("Select a value for N (starting population of prey)")),value=25,min=1,max=50),
+               numericInput("P",label=p(essaipkg3::essaipkg3::i18n$t("Select a value for P (starting population of predator)")),value=10,min=1,max=25),
 
-               helpText(h4(essaipkg3::i18n$t("Prey carrying capacity"))),
+               helpText(h4(essaipkg3::essaipkg3::i18n$t("Prey carrying capacity"))),
                radioButtons("Prey_K", label="",
                             choices = list("No" = 1,
                                            "Yes" = 2),
@@ -40,22 +40,22 @@ shinyAppUI <- fluidPage(
                # If users select "Prey carrying capacity" above, then generate the input option
                htmlOutput("UIpreyk"),
 
-               helpText(h4(essaipkg3::i18n$t("Set demographic parameters"))),
+               helpText(h4(essaipkg3::essaipkg3::i18n$t("Set demographic parameters"))),
                sliderInput("r",
-                           label = essaipkg3::i18n$t("Choose a value for r (prey intrinsic growth rate)"),
+                           label = essaipkg3::essaipkg3::i18n$t("Choose a value for r (prey intrinsic growth rate)"),
                            min = 0.01, max = 1.99, value=1.0, step = NULL),
                sliderInput("a",
-                           label = essaipkg3::i18n$t("Choose a value for a (predation efficiency)"),
+                           label = essaipkg3::essaipkg3::i18n$t("Choose a value for a (predation efficiency)"),
                            min = .0001, max = .5, value=.1, step = NULL),
                sliderInput("d",
-                           label = essaipkg3::i18n$t("Choose a value for d (predator death rate)"),
+                           label = essaipkg3::essaipkg3::i18n$t("Choose a value for d (predator death rate)"),
                            min = 0.01, max = 1, value=0.6, step = NULL),
                sliderInput("b",
-                           label = essaipkg3::i18n$t("Choose a value for b (conversion efficiency)"),
+                           label = essaipkg3::essaipkg3::i18n$t("Choose a value for b (conversion efficiency)"),
                            min = 0.01, max = 1, value=.5, step = NULL),
 
-               numericInput("time",label=essaipkg3::i18n$t("Number of time steps to run the model"),value = 100, min=1),
-               actionButton("goButton", essaipkg3::i18n$t("Go!"))
+               numericInput("time",label=essaipkg3::essaipkg3::i18n$t("Number of time steps to run the model"),value = 100, min=1),
+               actionButton("goButton", essaipkg3::essaipkg3::i18n$t("Go!"))
       )
     ),
     mainPanel(
@@ -81,8 +81,8 @@ shinyAppUI <- fluidPage(
                  p(withMathJax("$$ \\frac{dN}{dt}=0 \\text{  when  } P = \\frac{r}{a}-\\frac{rP}{aK} $$"))
         ),
 
-        tabPanel(title = essaipkg3::i18n$t("Plots"),
-                 h4(essaipkg3::i18n$t("Here are plots showing changes in populations")),
+        tabPanel(title = essaipkg3::essaipkg3::i18n$t("Plots"),
+                 h4(essaipkg3::essaipkg3::i18n$t("Here are plots showing changes in populations")),
                  fluidRow(
                    column(width = 6,
                           plotOutput("plot1", height = 400)),
