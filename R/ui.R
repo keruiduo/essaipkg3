@@ -8,8 +8,8 @@
 #
 
 
-i18n <- Translator$new(translation_json_path = "translation.json")
-i18n$set_translation_language("en")
+#i18n <- Translator$new(translation_json_path = "translation.json")
+#i18n$set_translation_language("en")
 
 # Define UI for application that draws a histogram
 shinyAppUI <- fluidPage(
