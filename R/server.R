@@ -7,7 +7,7 @@
 #    http://shiny.rstudio.com/
 #
 
-data(i18n, package = "essaipkg3")
+i18n <- essaipkg3:::i18n
 
 
 showtext_auto()
