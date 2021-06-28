@@ -7,8 +7,6 @@
 #    http://shiny.rstudio.com/
 #
 
-data(i18n)
-
 #i18n <- Translator$new(translation_json_path = "translation.json")
 #i18n$set_translation_language("en")
 

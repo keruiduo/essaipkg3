@@ -7,7 +7,6 @@
 #    http://shiny.rstudio.com/
 #
 
-data(i18n)
 showtext_auto()
 
 ########################################################
