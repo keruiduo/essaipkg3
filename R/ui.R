@@ -12,7 +12,7 @@
 
 # Define UI for application that draws a histogram
 
-shinyAppUI <- function(request) {
+shinyAppUIzopzop <- function(request) {
   # calling the translator sent as a golem option
   i18n <- golem::get_golem_options(which = "translator")
   i18n$set_translation_language("en")

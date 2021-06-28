@@ -7,7 +7,7 @@ run_app <- function(
 ) {
   with_golem_options(
     app = shinyApp(
-      ui = shinyAppUI,
+      ui = shinyAppUIzopzop,
       server = shinyAppServer,
       onStart = onStart,
       options = options,
