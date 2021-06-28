@@ -11,9 +11,16 @@
 #i18n$set_translation_language("en")
 
 # Define UI for application that draws a histogram
-shinyAppUI <- fluidPage(
+
+shinyAppUI <- function(request) {
+  # calling the translator sent as a golem option
   i18n <- golem::get_golem_options(which = "translator")
   i18n$set_translation_language("en")
+
+  tagList(# Leave this function for adding external resources
+    golem_add_external_resources(),
+    # Your application UI logic
+    fluidPage(
   shiny.i18n::usei18n(i18n),
   div( style = "float: right;",
        selectInput('selected_language',
@@ -100,4 +107,11 @@ shinyAppUI <- fluidPage(
         )
       )
     )
-  ))
+  )
+    )
+  )
+}
+
+
+
+
