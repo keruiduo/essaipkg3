@@ -1,4 +1,3 @@
 launchApp <- function() {
-  print(i18n)
-  #shinyApp(ui = shinyAppUI, server = shinyAppServer)
+  shinyApp(ui = shinyAppUI, server = shinyAppServer)
 }
