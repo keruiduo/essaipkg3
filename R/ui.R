@@ -99,4 +99,4 @@ shinyAppUI <- fluidPage(
         )
       )
     )
-  )))
+  ))
