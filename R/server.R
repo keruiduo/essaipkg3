@@ -7,9 +7,6 @@
 #    http://shiny.rstudio.com/
 #
 
-i18n <- essaipkg3:::i18n
-
-
 showtext_auto()
 
 ########################################################
