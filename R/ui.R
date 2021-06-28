@@ -18,7 +18,7 @@ shinyAppUI <- function(request) {
   i18n$set_translation_language("en")
 
   tagList(# Leave this function for adding external resources
-    golem_add_external_resources(),
+
     # Your application UI logic
     fluidPage(
   shiny.i18n::usei18n(i18n),
