@@ -49,7 +49,8 @@ lvpp <- function(pp.time,pp.init,pp.params) {
 pp.init<- c()
 pp.params <- c()
 # Define server logic required to draw a histogram
-shinyServer(function(input, output, session) {
+
+shinyAppServer <- function(input, output, session) {
   observeEvent(input$selected_language, {
     update_lang(session, input$selected_language)
   })
@@ -205,4 +206,4 @@ shinyServer(function(input, output, session) {
     }
   )
 
-})
+}

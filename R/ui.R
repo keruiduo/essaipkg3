@@ -12,7 +12,7 @@ i18n <- Translator$new(translation_json_path = "translation.json")
 i18n$set_translation_language("en")
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
+shinyAppUI <- fluidPage(
   shiny.i18n::usei18n(i18n),
   div( style = "float: right;",
        selectInput('selected_language',

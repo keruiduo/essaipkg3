@@ -1,3 +1,3 @@
-run_my_app <- function() {
-  runApp()
+launchApp <- function() {
+  shinyApp(ui = shinyAppUI, server = shinyAppServer)
 }
